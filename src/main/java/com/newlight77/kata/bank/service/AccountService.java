@@ -5,6 +5,7 @@ import com.newlight77.kata.bank.model.Client;
 
 public class AccountService {
     public Account create(Client client) {
-        return null;
+        Account account = new Account(client, client.getWallet());
+        return account;
     }
 }
