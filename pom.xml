@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.newlight77</groupId>
-	<artifactId>kata-bank-account-bdd</artifactId>
+	<artifactId>kata-bank-account-atdd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kata-bank-account-bdd</name>
+	<name>kata-bank-account-atdd</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
