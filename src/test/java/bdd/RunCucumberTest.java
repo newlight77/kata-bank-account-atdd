@@ -1,4 +1,4 @@
-package com.newlight77.kata.bank.bdd;
+package bdd;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
