@@ -8,5 +8,6 @@ import lombok.Data;
 public class Client {
     private String firstname;
     private String lastname;
+    private String country;
     private double wallet;
 }
