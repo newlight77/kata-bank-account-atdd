@@ -21,4 +21,7 @@ public class AccountService {
                 .created(false)
                 .build();
     }
+
+    public void deposit(double wallet) {
+    }
 }
