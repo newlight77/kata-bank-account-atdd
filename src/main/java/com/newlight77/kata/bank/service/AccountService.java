@@ -6,6 +6,7 @@ import com.newlight77.kata.bank.model.Country;
 import com.newlight77.kata.bank.model.CreationStatus;
 
 public class AccountService {
+
     public CreationStatus create(Client client) {
         Account account = new Account(client, client.getWallet());
 
@@ -22,6 +23,7 @@ public class AccountService {
                 .build();
     }
 
-    public void deposit(double wallet) {
+    public void deposit(Account account, double money) {
+        account.setBalance(account.getBalance()+money);
     }
 }

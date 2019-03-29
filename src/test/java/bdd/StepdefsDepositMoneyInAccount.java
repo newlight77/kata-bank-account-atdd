@@ -39,7 +39,7 @@ public class StepdefsDepositMoneyInAccount {
 
     @When("^he want to deposit his pocket money in his account$")
     public void he_want_to_deposit_his_pocket_money_in_his_account() throws Exception {
-        accountService.deposit(client.getWallet());
+        accountService.deposit(creationStatus.getAccount(), client.getWallet());
     }
 
     @Then("^the new balance is updated with (\\d+.\\d+)$")
