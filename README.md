@@ -41,13 +41,12 @@ From the original statement, I decided to add account creation feature.
 
 Let's translate the features above into user stories :
 
-* US1 : Create an account
-* US2 : Do not allow non-resident of France to create an account 
-* US3 : Deposit (negative not permitted)
-* US4 : Withdrawal (negative not permitted)  
-* US5 : GetBalance  
-* US6 : Account statement (date, quantity, balance) 
-* US7 : Statement printing
+* US1 : Create an account (not allow non-resident of France)
+* US2 : Deposit (negative not permitted)
+* US3 : Withdrawal (negative not permitted)  
+* US4 : GetBalance  
+* US5 : Account statement (date, quantity, balance) 
+* US6 : Statement printing
 
 ## Run it
 
