@@ -11,3 +11,15 @@ Feature: Deposit in Bank Account
     Examples:
     | init_balance | money   | balance |
     | 100          | 50      | 150.0   |
+
+  Scenario Outline: Deposit money with negative amount
+    Given a client having an account
+    And the balance in that account is <init_balance>
+    And he has <money> in his wallet
+    When he want to deposit his pocket money in his account
+    Then the deposit is not allowed
+    And An error is displayed
+
+    Examples:
+      | init_balance | money   | balance |
+      | 100          | -150    | 150.0   |
