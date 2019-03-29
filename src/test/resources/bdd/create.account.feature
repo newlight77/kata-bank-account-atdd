@@ -10,10 +10,10 @@ Feature: Bank account creation
 
     Examples:
     | lastname | firstname | money   | country   | balance |
-    | To       | Kong      | 100.0   | France    | 100.0   |
-    | King     | Kong      | 10.0    | France    | 10.0    |
+    | To       | Kong      | 100.0   | FRANCE    | 100.0   |
+    | King     | Kong      | 10.0    | FRANCE    | 10.0    |
 
-  Scenario Outline: Create an account not allowed for non resident of France
+  Scenario Outline: Create an account not allowed for non resident of FRANCE
     Given a client who's lastname is <lastname> and firstname is <firstname>
     And he has <money> in his wallet
     And he lives in <country>
@@ -23,6 +23,6 @@ Feature: Bank account creation
 
     Examples:
     | lastname | firstname | money   | country     | error_message |
-    | To       | Kong      | 100.0   | Portual     | no allowed    |
-    | King     | Kong      | 100.0   | India       | no allowed    |
-    | King     | Kong      | 100.0   | Italy       | no allowed    |
+    | To       | Kong      | 100.0   | PORTUGAL    | no allowed    |
+    | King     | Kong      | 100.0   | INDIA       | no allowed    |
+    | King     | Kong      | 100.0   | ITALY       | no allowed    |
