@@ -4,12 +4,12 @@
 
 ```bash
 curl https://start.spring.io/starter.tgz \
--d dependencies=web,actuator,lombok \
+-d dependencies=lombok \
 -d language=java \
 -d type=maven-project \
--d baseDir=kata-bank-account-bdd \
+-d baseDir=kata-bank-account-atdd \
 -d groupId=com.newlight77 \ 
--d artifactId=kata-bank-account-bdd \
+-d artifactId=kata-bank-account-atdd \
 | tar -xzvf -
 ```
 
@@ -74,29 +74,33 @@ curl https://start.spring.io/starter.tgz \
 
 ## Step 4 : add Cucumber runner and StepRefs
 
-RunCucumberTest.java 
+src/java/test/cucumber/RunCucumberTest.java :
 
 ```java
-package com.newlight77.kata.bank.bdd;
+package cucumber;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty"})
+@CucumberOptions(
+    plugin = {
+            "pretty",
+            "html:target/cucumber",
+            "json:target/cucumber/Cucumber.json",
+            "junit:target/cucumber/Cucumber.xml",
+    },
+    features = {
+            "features"
+    },
+    glue = {
+        "cucumber/stepdefs"
+    },
+    tags = {
+        "@Account"
+    }
+)
 public class RunCucumberTest {
-}
-```
-
-```java
-package com.newlight77.kata.bank.bdd;
-
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-
-public class Stepdefs {
-
 }
 ```
