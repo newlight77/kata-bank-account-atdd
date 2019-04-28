@@ -1,9 +1,6 @@
 package com.newlight77.kata.bank.service;
 
-import com.newlight77.kata.bank.model.Account;
-import com.newlight77.kata.bank.model.Client;
-import com.newlight77.kata.bank.model.Country;
-import com.newlight77.kata.bank.model.CreationStatus;
+import com.newlight77.kata.bank.model.*;
 
 public class AccountService {
 
@@ -24,6 +21,9 @@ public class AccountService {
     }
 
     public void deposit(Account account, double money) {
+        if (money < 0) {
+            throw new NotAllowedOperationException("operation not allowed");
+        }
         account.setBalance(account.getBalance()+money);
     }
 }

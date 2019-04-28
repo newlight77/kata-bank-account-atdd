@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
         "cucumber/stepdefs"
     },
     tags = {
-        "@Account"
+        "@Deposit"
     }
 )
 public class RunCucumberTest {
