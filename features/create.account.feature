@@ -1,6 +1,7 @@
 Feature: Bank account creation
   A client wants to create a bank account
 
+  @Account
   Scenario Outline: Create an account with his money
     Given a client who's lastname is <lastname> and firstname is <firstname>
     And he has <money> in his wallet
@@ -13,6 +14,7 @@ Feature: Bank account creation
     | To       | Kong      | 100.0   | FRANCE    | 100.0   |
     | King     | Kong      | 10.0    | FRANCE    | 10.0    |
 
+  @Account
   Scenario Outline: Create an account not allowed for non resident of FRANCE
     Given a client who's lastname is <lastname> and firstname is <firstname>
     And he has <money> in his wallet

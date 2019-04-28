@@ -1,4 +1,4 @@
-package bdd;
+package cucumber.stepdefs;
 
 import com.newlight77.kata.bank.model.Client;
 import com.newlight77.kata.bank.model.Country;
@@ -23,7 +23,7 @@ public class StepdefsBankAccountCreation {
                 .build();
     }
 
-    @Given("^he has (\\d+.\\d+) in his wallet$")
+    @Given("^he has (\\-?\\d*\\.?\\d+) in his wallet$")
     public void he_has_in_his_wallet(double money) throws Exception {
         client.setWallet(money);
     }
@@ -38,7 +38,7 @@ public class StepdefsBankAccountCreation {
         creationStatus = accountService.create(client);
     }
 
-    @Then("^the account is created under his name with an initial balance of (\\d+.\\d+)$")
+    @Then("^the account is created under his name with an initial balance of (\\-?\\d*\\.?\\d+)$")
     public void the_account_is_created_under_his_name_with_an_initial_balance_of(double balance) throws Exception {
         Assertions.assertThat(creationStatus).isNotNull();
         Assertions.assertThat(creationStatus.isCreated()).isTrue();
